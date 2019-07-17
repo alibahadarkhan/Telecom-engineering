@@ -22,8 +22,8 @@ public class ThymeleafConfig implements WebMvcConfigurer {
 		return resolver;
 	}
 
-	@Bean
-	public ISpringTemplateEngine templateEngine() {
+
+	private ISpringTemplateEngine templateEngine() {
 		SpringTemplateEngine templateEngine = new SpringTemplateEngine();
 		templateEngine.setTemplateResolver(templateResolver());
 		return templateEngine;
