@@ -12,4 +12,10 @@ public class IPConfigurationController {
 		model.addAttribute("message", "this is first app");
 		return "home";
 	}
+	
+	@GetMapping(value ="/task")
+	public String taskPage(Model model) {
+		model.addAttribute("message", "this is task app.");
+		return "task";
+	}
 }
