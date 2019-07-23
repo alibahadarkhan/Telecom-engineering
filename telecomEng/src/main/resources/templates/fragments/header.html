@@ -1,6 +1,6 @@
 
-	<div class="navbar navbar-inverse navbar-fixed-top"	th:fragment="header">
-		<div class="container">
+	<div class="navbar navbar-inverse bg-inverse"	th:fragment="header">
+		
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse"
 					data-target=".nav-collapse">
@@ -29,10 +29,10 @@
 					<!--              <form style="visibility: hidden" id="form" method="post" action="#" th:action="@{/logout}"></form> -->
 					<!--             </li> -->
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="#"><span class="glyphicon glyphicon-user"></span>Sign Up</a></li>
-						<li><a href="#"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+						<li><a href="#" th:href="@{/signUp}"><span class="glyphicon glyphicon-user"></span>Sign Up</a></li>
+						<li><a href="#" th:href="@{/login}"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
 					</ul>
 				</ul>
 			</div>
 		</div>
-	</div>
+

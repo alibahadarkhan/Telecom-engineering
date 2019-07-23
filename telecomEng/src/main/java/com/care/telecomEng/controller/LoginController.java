@@ -5,13 +5,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class IPConfigurationController {
+public class LoginController {
 
-	@GetMapping(value ="/home")
-	public String taskPage(Model model) {
-		model.addAttribute("message", "this is task app.");
-		return "home";
+	@GetMapping
+	public String loginPage(Model model) {
+		return "login";
 	}
-
-	
 }
