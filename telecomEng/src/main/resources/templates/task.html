@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-	layout:decorate="~{template}">
+	layout:decorate="~{fragments/template}">
 <head>
-<title>Insert title here</title>
+<title>Taske</title>
 </head>
 <body>
-	<section layout:fragment="content" class="container">
+	<div layout:fragment="content" th:remove="tag">
 		<div class="hero-unit">
 			<h1>Test</h1>
 			<p>Welcome to the Spring MVC Quickstart application! Get started
@@ -17,7 +17,7 @@
 					class="btn btn-large btn-success">Sign up</a>
 			</p>
 		</div>
-	</section>
+	</div>
 
 </body>
 </html>

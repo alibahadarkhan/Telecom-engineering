@@ -1,8 +1,20 @@
-<!DOCTYPE html>
-<html>
-  <body>
-    <div th:fragment="footer">
-      &copy; 2019 Footer
-    </div>
-  </body>
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<body>
+	<th:block th:fragment="footer">
+		<footer class="page-footer font-small blue">
+			<div class="footer-copyright text-center py-3">
+							© 2019 Copyright: 
+				TeleCom.com
+			</div>
+
+
+			<script
+				src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+			<script
+				src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+		</footer>
+	</th:block>
+</body>
 </html>
