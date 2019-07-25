@@ -4,16 +4,11 @@
 <body>
 	<th:block th:fragment="footer">
 		<footer class="page-footer font-small blue">
-			<div class="footer-copyright text-center py-3">
-							© 2019 Copyright: 
-				TeleCom.com
+			<div class="footer">
+							© 2019 Copyright: 	TeleCom.com
 			</div>
-
-
-			<script
-				src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-			<script
-				src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+			 <script type="text/javascript"  th:src="@{/webjars/jquery/3.2.1/jquery.min.js/}"></script>
+ 			<script type="text/javascript"  th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
 		</footer>
 	</th:block>
 </body>

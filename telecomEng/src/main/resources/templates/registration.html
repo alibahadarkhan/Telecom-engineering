@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <title>Registration</title>
-<link rel="stylesheet"	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}" />
 </head>
 <body>
 	<div class="container">
@@ -52,16 +52,6 @@
 <!--                        th:text="${error}">Validation error</p> -->
                 </div>
                 <div class="form-group">
-<!--                      th:classappend="${#fields.hasErrors('confirmEmail')}? 'has-error':''"> -->
-                    <label for="confirmEmail" class="control-label">Confirm e-mail</label>
-                    <input id="confirmEmail"
-                           class="form-control"
-                           th:field="*{confirmEmail}"/>
-<!--                     <p class="error-message" -->
-<!--                        th:each="error : ${#fields.errors('confirmEmail')}" -->
-<!--                        th:text="${error}">Validation error</p> -->
-                </div>
-                <div class="form-group">
 <!--                      th:classappend="${#fields.hasErrors('password')}? 'has-error':''"> -->
                     <label for="password" class="control-label">Password</label>
                     <input id="password"
@@ -103,7 +93,7 @@
         </div>
     </div>
     </div>
-    		<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-			<script	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+ <script type="text/javascript"  th:src="@{/webjars/jquery/3.2.1/jquery.min.js/}"></script>
+ <script type="text/javascript"  th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
 </body>
 </html>

@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
-	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
 <title layout:title-pattern="$LAYOUT_TITLE - $CONTENT_TITLE"></title>
 <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="stylesheet"	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<link rel="stylesheet" th:href="@{/assets/css/styles.css}" />
 
 </head>
 <body>
 	<div class="container">
 		<th:block th:replace="fragments/header :: header" />
 		<th:block layout:fragment="content" />
+		<th:block th:replace="fragments/footer :: footer" />
 	</div>
-	<th:block th:replace="fragments/footer :: footer" />
 </body>
 </html>

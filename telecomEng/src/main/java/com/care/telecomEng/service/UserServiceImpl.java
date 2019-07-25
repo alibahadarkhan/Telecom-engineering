@@ -13,8 +13,11 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.care.telecomEng.dto.UserDTO;
+import com.care.telecomEng.model.Customer;
 import com.care.telecomEng.model.Role;
 import com.care.telecomEng.model.User;
+import com.care.telecomEng.reposityory.CustomerRepository;
+import com.care.telecomEng.reposityory.RoleRepository;
 import com.care.telecomEng.reposityory.UserRepository;
 
 @Service
@@ -22,6 +25,11 @@ public class UserServiceImpl implements UserService {
 	
 	@Autowired
 	private UserRepository userRepo;
+	@Autowired
+	private CustomerRepository customerRepos;
+	
+	@Autowired
+	private RoleRepository roleRepo;
 	
 	@Autowired
 	private BCryptPasswordEncoder passwordEncoder;
@@ -44,12 +52,16 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public User saveUser(UserDTO userDto) {
         User user = new User();
-        user.setFirstName(userDto.getFirstName());
-        user.setLastName(userDto.getLastName());
+        Customer customer = new Customer();
+        customer.setFirstName(userDto.getFirstName());
+        customer.setLastName(userDto.getLastName());
+        customer.setUser(user);
         user.setEmail(userDto.getEmail());
         user.setPassword(passwordEncoder.encode(userDto.getPassword()));
-        user.setRoles(Arrays.asList(new Role("ROLE_USER")));
-        return userRepo.save(user);
+        user.setRoles(Arrays.asList(roleRepo.findByRoleNameContainingIgnoreCase("user")));
+        user.setCustomer(customer);
+        customerRepos.save(customer);
+        return user;
 	}
 	
 	 private Collection<? extends GrantedAuthority> mapRolesToAuthorities(Collection<Role> roles){

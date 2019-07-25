@@ -1,4 +1,12 @@
-
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorate="~{fragments/template}"
+	  xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+<title>header</title>
+</head>
+<body>
 	<div class="navbar navbar-inverse bg-inverse"	th:fragment="header">
 		
 			<div class="navbar-header">
@@ -31,8 +39,10 @@
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="#" th:href="@{/signUp}"><span class="glyphicon glyphicon-user"></span>Sign Up</a></li>
 						<li><a href="#" th:href="@{/login}"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+						<li sec:authorize="isAuthenticated()"><a th:href="@{/logout}">Logout</a></li>
 					</ul>
 				</ul>
 			</div>
 		</div>
-
+</body>
+</html>

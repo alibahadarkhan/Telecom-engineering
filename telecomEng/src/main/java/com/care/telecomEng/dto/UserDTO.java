@@ -34,7 +34,4 @@ public class UserDTO {
     @NotBlank
     private String email;
 
-    @NotBlank
-    private String confirmEmail;
-
 }
