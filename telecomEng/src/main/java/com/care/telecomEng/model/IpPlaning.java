@@ -1,11 +1,6 @@
 package com.care.telecomEng.model;
 
-import java.util.List;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -20,19 +15,24 @@ import lombok.experimental.FieldDefaults;
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Entity
-public class Customer extends BaseEntity{
+public class IpPlaning extends BaseEntity{
 	
-     /**
+	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	String firstName;
-     String lastName;
-    
-    @OneToOne(mappedBy = "customer",cascade = CascadeType.ALL)
-    private User user;
-    
-    @OneToMany(mappedBy = "custumer" ,cascade = CascadeType.ALL)
-    private List<Site> sites;
+	String siteIp;
+	String pupose;
+	String description;
+	String instance;
+	String a_end31;
+	String b_end31;
+	String core_pe_name;
+	String e_end_wan_port;
+	String pe_interface;
+	String outer_v_lan;
+	String inner_v_lan;
+	
+
 }
