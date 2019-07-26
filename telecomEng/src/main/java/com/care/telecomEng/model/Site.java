@@ -1,11 +1,8 @@
 package com.care.telecomEng.model;
 
-import java.util.List;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -20,19 +17,17 @@ import lombok.experimental.FieldDefaults;
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Entity
-public class Customer extends BaseEntity{
+public class Site extends BaseEntity {
 	
-     /**
+	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+
+	String siteName;
 	
-	String firstName;
-     String lastName;
-    
-    @OneToOne(mappedBy = "customer",cascade = CascadeType.ALL)
-    private User user;
-    
-    @OneToMany(mappedBy = "custumer" ,cascade = CascadeType.ALL)
-    private List<Site> sites;
+	@ManyToOne
+	@JoinColumn(name = "customer_id")
+	Customer custumer;
+
 }
